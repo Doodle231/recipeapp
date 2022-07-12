@@ -1,40 +1,43 @@
 import Nav from "./components/nav";
-import Home from "./components/home";
-import React, {useState} from "react";
+import Home from "./pages/home"; 
+import {Route, Router, Routes} from "react-router-dom"
+import { BrowserRouter } from "react-router-dom";
+import {Item} from "./pages/Item"
 
+import { MainCourse } from "./pages/MainCourse";
+import {Soup} from "./pages/Soup"
+import {Salad} from "./pages/Salad"
+import {Appetizer} from "./pages/Appetizer"
 
 function App() {
-  const [mealData, setMealData] = useState(null)
-  const [calories, setCalories] = useState(2000)
   
-
-function getMealData () { 
-  fetch(
-    ' https://api.spoonacular.com/recipes/716429/information?apiKey=ff5debaea5bd4f8f96bc5f35c4139d92&type=true&number=6'
-  )
-.then((response) => response.json ())
-.then((data) => {
-  setMealData(data)
-  console.log(data)
-})
-.catch (() => {
-  console.log ("error")
-})
-
-
-}
-
 
   return (
-   <>
+    <>
 
- 
-  <Nav/>
-  <Home/>
+  <BrowserRouter>
+   <Nav/>
+   
   
    
-   </>
-  );
+   <Routes>
+   <Route path ="/" element = {<Home/>} />
+ <Route path ="/MainCourse" element = {<MainCourse/>} />
+ <Route path ="/Soup" element = {<Soup/>} />
+ <Route path ="/Salad" element = {<Salad/>} />
+ <Route path ="/Appetizer" element = {<Appetizer/>} />
+ <Route path ="/Item" element = {<Item/>} />
+</Routes>
+</BrowserRouter>
+
+    </>
+   );
+
+
 }
+
+
+  
+
 
 export default App;
