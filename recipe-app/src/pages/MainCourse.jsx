@@ -24,7 +24,7 @@ export function MainCourse() {
     const data = await api.json()
    
     setMainCourse(data.results)
-
+   
    
   }
   
@@ -38,7 +38,7 @@ export function MainCourse() {
    
     {mainCourse.map ((recipe) => {
      return (
-      <div className="card w-76 h-88 bg-blue-500 ml-2 mr-2">
+      <div className="card w-76 h-88 ml-2 mr-2">
     <h1 className='text-center text-white font-bold mt-1'>{recipe.title}</h1>
     <img src = {recipe.image} alt = {recipe.title }  className = "object-scale-down  mx-auto rounded-2xl w-3/4 h-3/4 mt-4 mb-2 shadow-blue-500/50 border-2 border-yellow-200 "></img>
     <button onClick = { () => {  

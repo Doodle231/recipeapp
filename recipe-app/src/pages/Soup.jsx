@@ -29,8 +29,9 @@ export function Soup() {
     <>
     
     <h1 className="font-bold ml-8 pb-4 pt-4"> Soup</h1>
+
     <div className="grid grid-cols-3 items-center group w-full gap-2 pb-6 ">
-   
+
     {soup.map ((recipe) => {
      return (
       <div className="card w-full h-80 bg-blue-300 margin-auto">
